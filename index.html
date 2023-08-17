@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Tetris</title>
+        <style type="text/css">
+        <!--
+            body, html { margin: 0 0 0 0; padding: 0 0 0 0;}
+            div.centered-controls {
+                text-align: center;
+                font-size: larger;
+            }
+            button {
+                font-size: larger;
+                padding: 6px 6px 6px 6px;
+                margin-left: 1em;
+                margin-right: 1em;
+            }
+            div.playing-field {
+                border: solid thin red;
+                width: 50vh;
+                max-width: 320px;
+                height: 99vh;
+                max-height: 640px;
+                margin: auto;
+                background-color: rgb(247, 255, 130);
+                padding: 0 0 0 0;
+                position: relative;
+            }
+            div.block {
+                background-color: red;
+                border: solid thin black;
+                position: absolute;
+                width: 10em;
+                height: 10em;
+            }
+        //-->
+        </style>
+    </head>
+    <body>
+        <div class="centered-controls">
+            <button onclick="t.start()">Start</button>
+            Blocks: <span id="block-counter">0</span>
+        </div>
+        <div class="playing-field"></div>
+        <div class="centered-controls">
+            <button onclick="t.moveBlockSideways(-1);">&larr;</button>
+            <button onclick="t.moveBlockSideways(1);">&rarr;</button>
+            </div>
+    </body>
+    <script type="text/javascript" src="built/tetris.js"></script>
+    <script>
+        var fe = document.getElementsByClassName("playing-field")[0];
+        var ce = document.getElementById("block-counter");
+        init(8, 16, fe, ce);
+    </script>
+</html>
